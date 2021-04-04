@@ -1,9 +1,12 @@
 <template>
   <div class="foondament">
   <header class="foondament-header">
-  <nuxt-link to="/" class="header-link">Записная книга</nuxt-link>
-  <nuxt-link to="/tample" class="header-link">Главная</nuxt-link>
+  <nuxt-link to="/" class="header-link-main">записная книга</nuxt-link>
+  
   <button class="header-link" @click="openModal">создать</button>
+  <button class="header-link" @click="openModal">завершить</button>
+  <button class="header-link" @click="openModal">Взять в работу</button>
+  <button class="header-link" @click="openModal">удалить</button>
    
   </header>
     <Nuxt />
@@ -18,8 +21,10 @@ export default {
   }),
   methods: {
     openModal() {
-    this.$nuxt.$emit('showDialog')}
+    this.$nuxt.$emit('showDialog')
    }
+  
+}
 }
 </script>
 <style lang="scss">
@@ -33,12 +38,28 @@ export default {
 
 .foondament-header {
 display: flex;
+align-items: center;
 }
 
 .header-link {
-   padding: 1rem;
+   padding: 0.1rem;
+   height:1.5rem;
    margin-right: 1rem;
+   text-transform: uppercase;
+   font-family: 'Montserrat', sans-serif;
+   text-decoration: none;
+   border-radius: 25px;
+   
 }
+   .header-link-main {
+       font-weight: bold;
+       padding: 1rem;
+       margin-right: 1rem;
+       text-transform: uppercase;
+       text-decoration: none;
+       font-size: 25px;
+   }
+
 
 .header-link:last-of-type {
  margin-right: 0;
